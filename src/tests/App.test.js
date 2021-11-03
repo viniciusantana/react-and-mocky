@@ -31,7 +31,7 @@ describe('Test Rick & Morty API', () => {
     const button = screen.getByRole('button', { name: 'Buscar'});
     userEvent.type(input, 'Smith');
     userEvent.click(button);
-    const cards = screen.getAllByAltText(/Smith/i);
+    const cards = screen.getAllByRole('article')
     expect(cards).toHaveLength(4);
   })
 
